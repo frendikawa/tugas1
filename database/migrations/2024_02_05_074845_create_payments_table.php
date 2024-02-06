@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
+            $table->integer('total');
+            $table->string('proof');
             $table->enum('status',['confirmed','rejected']);
             $table->timestamps();
         });
